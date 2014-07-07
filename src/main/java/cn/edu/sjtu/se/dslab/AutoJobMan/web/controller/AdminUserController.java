@@ -131,6 +131,7 @@ public class AdminUserController {
 			staffreal.setRealname(staff.getRealname());
 			staffreal.setTel(staff.getTel());
 			staffreal.setUsername(staff.getUsername());
+			staffreal.setDepartment(staff.getDepartment());
 			staffService.changeInfo(staffreal);
 			modelMap.put("success", true);
 			modelMap.put("newUserName", staff.getUsername());

@@ -147,6 +147,7 @@ function savechange(rootPath){
 				 username: "required",
 				 realname: "required",
 				 telephone: "required",
+				 department: "required",
 				 oldcode : "required",
 				 newcode:"required",
 				 newcode2:{
@@ -205,6 +206,7 @@ function savechange2(rootPath){
         	 username: $("#username").val(),
 			 realname: $("#realname").val(),
 			 tel: $("#telephone").val(),
+			 department:$("#department").val(),
 			 password : $("#oldcode").val(),
 			 newcode:$("#newcode").val(),
         },

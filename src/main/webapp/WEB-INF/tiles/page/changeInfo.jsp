@@ -37,6 +37,13 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="department" class="col-sm-3 control-label">部门</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="department"
+								id="department" placeholder="部门" value="${staff.department}">
+						</div>
+					</div>
+					<div class="form-group">
 						<div class="col-sm-10 col-sm-offset-3">
 							<button class="btn btn-primary"
 								onclick="savechange(<%=request.getContextPath()%>/)">保存</button>
