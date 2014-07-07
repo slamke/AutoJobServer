@@ -1,5 +1,6 @@
 package cn.edu.sjtu.se.dslab.AutoJobMan.web.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -21,7 +22,10 @@ public class StaffDaoImpl implements IStaffDao{
 		if(staffList.size()==0){
 			return null;
 		}
-		return staffList.get(0);
+		if(!staffList.get(0).isDeleted()){
+			return staffList.get(0);
+		}
+		return null;
     }
 	
 	@Override
@@ -35,7 +39,8 @@ public class StaffDaoImpl implements IStaffDao{
 	}
 	@Override
 	public void remove(Staff staff){
-		baseDao.delete(staff);
+		staff.setDeleted(true);
+		baseDao.update(staff);
 	}
 	
 	@Override
@@ -45,18 +50,35 @@ public class StaffDaoImpl implements IStaffDao{
 	
 	@Override
 	public List<Staff> getAll(){
-		return baseDao.queryAll(Staff.class);
+		List<Staff> staffList=baseDao.queryAll(Staff.class);
+		if(staffList!=null){
+			List<Staff> result=new ArrayList<Staff>();
+			for(Staff staff:staffList){
+				if(!staff.isDeleted()){
+					result.add(staff);
+				}
+			}
+			return result;
+		}
+		return null;
 	}
 	
 	@Override
 	public void removeByUserName(String username,String property){
-		baseDao.deleteByProperty(Staff.class, property, username);
+		List<Staff> staffList=baseDao.queryByProperty(Staff.class, property, username);
+		if(staffList!=null){
+			staffList.get(0).setDeleted(true);
+		}
+		baseDao.update(staffList.get(0));
 	}
 	
 	@Override 
 	public Staff getUserByUN(String username){
-		if(baseDao.queryByProperty(Staff.class, "username", username).size()!=0){
-			return baseDao.queryByProperty(Staff.class, "username", username).get(0);
+		List<Staff> staffList=baseDao.queryByProperty(Staff.class, "username", username);
+		if(staffList.size()!=0){
+			if(!staffList.get(0).isDeleted()){
+				return staffList.get(0);
+			}
 		}
 		return null;
 	}
@@ -65,11 +87,12 @@ public class StaffDaoImpl implements IStaffDao{
 	public Staff queryByRealName(String realname) {
 		
 		List<Staff> staffList =baseDao.queryByProperty(Staff.class, "realname", realname);
-		if(staffList.size()==0){
-			System.out.print("name=="+realname+"\n");
-			return null;
+		if(staffList.size()!=0){
+			if(!staffList.get(0).isDeleted()){
+				return staffList.get(0);
+			}
 		}
-		return staffList.get(0);
+		return null;
 		
 	}
 }

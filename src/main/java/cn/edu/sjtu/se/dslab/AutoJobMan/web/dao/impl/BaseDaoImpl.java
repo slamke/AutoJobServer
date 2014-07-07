@@ -63,7 +63,6 @@ public class BaseDaoImpl<T extends Serializable> implements IBaseDao<T> {
     }
     
     public void deleteByProperty(Class<T> clazz,String property,String value){
-    	System.out.print("size="+queryByProperty(clazz, property, value).size()+"\n");
     	if(queryByProperty(clazz, property, value).size()!=0){
     		getSession().delete(queryByProperty(clazz, property, value).get(0));
     	}
