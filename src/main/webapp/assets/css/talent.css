@@ -1,0 +1,47 @@
+ .myselect{  
+    cursor:pointer;
+    line-height:25px;height:25px;
+    border:1px solid gray;
+    outline:none;border-style:solid;
+    -webkit-appearance: none;
+    border-width:1px 23px 1px 1px;
+    -webkit-border-image:url("../../images/select-arrow2.png") 1 23 1 1 round round; 
+  }
+  
+ img{ 
+max-width:800px; 
+width:expression(this.width>800?"800px":this.width); 
+max-height:800px; 
+height:expression(this.height>800?"800px":this.height); 
+}
+
+.myerror{
+	color:#FF0000;
+	text-align:left;
+	}
+
+ #ui-datepicker-div{
+	z-index:10001 ! important;
+}
+
+.overflow-talent{
+	width:27em;
+	 white-space:nowrap; 
+	 text-overflow:ellipsis;
+	  -o-text-overflow:ellipsis; 
+	  overflow:hidden;
+}
+
+/* ---- Select ----*/  
+.selectContainer{position:relative; width:262px; display:inline-block; _display:inline; _zoom:1; z-index:1000; background:#FFF; border:1px solid #CCC}  
+.selectContainer input{}  
+.selectContainer .selectOption{min-width:180px; padding:0 5px; line-height:25px; height:25px; white-space:nowrap; overflow:hidden;border:none; width:250px; z-index:1000}  
+.selectContainer .shows{width:20px; height:20px; position:absolute; right:2px; top:2px; background:url(images/select-ico.gif) no-repeat center center}  
+.selectContainer ul{position:absolute; width:100%; top:25px; left:-1px; border-bottom:1px solid #CCC; display:none;}  
+.selectContainer ul li{padding:0 5px; border:1px solid #CCC; border-bottom:1px solid #EEE; border-top:none; line-height:25px; width:252px; background:#FFF; cursor:pointer}  
+.selectContainer ul li:hover{background:#F5F5F5}  
+  
+.selectContainer ul.dis{display:block!important;}  
+.selectContainer ul.undis{display:noneimportant;}  
+.zIndex{z-index:10000!important}  
+.selectContainer .gray{color:#DDD} 

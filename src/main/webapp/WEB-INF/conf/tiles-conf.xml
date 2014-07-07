@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+    <definition name="base" template="/WEB-INF/tiles/template.jsp">
+        <put-attribute name="_meta" value="/WEB-INF/tiles/layouts/_meta.jsp" />
+        <put-attribute name="_header" value="/WEB-INF/tiles/layouts/_header.jsp" />
+        <put-attribute name="_footer" value="/WEB-INF/tiles/layouts/_footer.jsp" />
+    </definition>
+    
+    <!-- Home page -->
+    <definition name="home"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/home.jsp" />
+    </definition>
+    <!-- end of Home page -->
+   
+   	<!-- Login page -->
+   	<definition name="login"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/login.jsp" />
+    </definition>
+   	<!-- end of Login page -->
+    
+    <!-- adminUser page -->
+   	<definition name="adminUser"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/adminUser.jsp" />
+    </definition>
+   	<!-- end of adminUser page -->
+   	
+   	<!-- itemDetail page -->
+   	<definition name="itemDetail"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/itemDetail.jsp" />
+    </definition>
+   	<!-- end of itemDetail page -->
+   	
+   	<!-- search page -->
+   	 <definition name="search"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/search.jsp" />
+    </definition>
+    <!-- end of search page -->
+    
+    <!-- changeInfo page -->
+   	 <definition name="changeInfo"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/changeInfo.jsp" />
+    </definition>
+    <definition name="adminChangeInfo"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/adminChangeInfo.jsp" />
+    </definition>
+    <!-- end of changeInfo page -->
+    
+       <!-- siteInfo page -->
+    <definition name="siteInfo"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/siteInfo.jsp" />
+    </definition>
+    <!-- end of siteInfo page -->
+    
+       <!-- workInfo page -->
+    <definition name="workInfo"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/workInfo.jsp" />
+    </definition>
+    <!-- end of workInfo page -->
+    
+       <!-- beforeWork page -->
+    <definition name="beforeWork"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/beforeWork.jsp" />
+    </definition>
+    <!-- end of beforeWork page -->
+    
+       <!-- afterWork page -->
+    <definition name="afterWork"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/afterWork.jsp" />
+    </definition>
+    <!-- end of afterWork page -->
+    
+         <!-- changeSiteInfo page -->
+    <definition name="changeSiteInfo"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/changeSiteInfo.jsp" />
+    </definition>
+    <!-- end of changeSiteInfo page -->
+    
+    <!-- task page -->
+    <definition name="task"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/task.jsp" />
+    </definition>
+    <!-- end of task page -->
+    
+     <!-- addTask page -->
+    <definition name="addTask"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/addTask.jsp" />
+    </definition>
+    <!-- end of addTask page -->
+    <!-- chgTaskInfo page -->
+    <definition name="chgTaskInfo"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/chgTaskInfo.jsp" />
+    </definition>
+    <!-- end of chgTaskInfo page -->
+    
+    <!-- evaluateTask page -->
+    <definition name="taskEvaluate"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/taskEvaluate.jsp" />
+    </definition>
+    <!-- end of evaluateTask page -->
+    <!-- totaskEvaluate page -->
+    <definition name="totaskEvaluate"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/totaskEvaluate.jsp" />
+    </definition>
+    <!-- end of totaskEvaluate page -->
+    
+    <!-- urgencyDetail page -->
+    <definition name="urgencyDetail"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/urgencyDetail.jsp" />
+    </definition>
+    <!-- end of urgencyDetail page -->
+    <!-- urgencyList page -->
+    <definition name="urgencyList"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/urgencyList.jsp" />
+    </definition>
+    <!-- end of urgencyList page -->
+     <!-- realSituation page -->
+    <definition name="realSituation"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/realSituation.jsp" />
+    </definition>
+    <!-- end of realSituation page -->
+     <!-- searchRealSituation page -->
+    <definition name="searchRealSituation"  extends="base">
+        <put-attribute name="_body" value="/WEB-INF/tiles/page/searchRealSituation.jsp" />
+    </definition>
+    <!-- end of searchRealSituation page -->
+    
+    
+    <definition name="mobile_before" template="/WEB-INF/tiles/page/mobile_before.jsp">
+    </definition>
+    
+    <definition name="mobile_after" template="/WEB-INF/tiles/page/mobile_after.jsp">
+    </definition>
+</tiles-definitions>

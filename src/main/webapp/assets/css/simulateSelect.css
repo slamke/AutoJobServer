@@ -1,0 +1,43 @@
+/* 	*{
+  		margin:0;
+  		padding:0;
+  	}
+ 
+  	li{
+  		list-style:none;
+  	} */
+ 
+/*  
+  	.i_select{
+  		margin:50px;		
+  		position:relative;
+  	} */
+ 
+  /* 	.i_select input{
+  		display:block;
+  		cursor:pointer;
+  		width:75px;
+  		height:20px;
+  		padding-right:25px;
+  		text-align:center;
+  		background:url(images/select_bg.gif) no-repeat right -22px;
+  	}
+ 
+  	.i_select ul{
+  		position:absolute;
+  		left:0;
+  		top:22px;
+  		width:80px;
+  		background:#fff;
+  		border:solid #ccc;
+  		border-width:1px 1px 1px 2px;
+  		border-top:1px solid #fff;
+  		display:none;    暂且将列表隐藏，后面点击才出现
+  	}
+  	.i_select ul li{
+  		height:24px;
+  		line-height:24px;
+  		width:80px;
+  		text-align:center;
+  		cursor:pointer;
+  	} */

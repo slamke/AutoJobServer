@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app xmlns="http://java.sun.xml/ns/javaee"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                                                     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>haiercloud-webapp</display-name>
+    <!-- context-params -->
+    <!-- webAppRootKey -->
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>haiercloud-webapp</param-value>
+    </context-param>
+
+    <!-- Spring configuration file location -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/classes/applicationContext.xml,classpath*:applicationContext.xml</param-value>
+    </context-param>
+    <!-- end of context-params -->
+    
+    <!-- Spring configuration -->
+    <!-- filters -->
+    <!-- Spring encoding filter -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <!-- Encoding URL mapping -->
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- end of filters -->
+    
+    <!-- Listeners -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+	    <listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
+	</listener>
+    <!-- end of Listeners -->
+    
+    <!-- Servlet configuration -->
+    <servlet>
+        <servlet-name>SpringDispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/dispathcer-servlet.xml</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SpringDispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <!-- end of Servlet configuration -->
+    
+
+    
+    <!-- Error page definition -->
+    <!-- 
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/static_pages/error_pages/500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/static_pages/error_pages/500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/static_pages/error_pages/404.jsp</location>
+    </error-page>
+    -->
+    <!-- end of Error page definition -->
+    
+    <!-- Welcome page definition -->
+     
+   <!--  <welcome-file-list>
+        <welcome-file>/WEB-INF/tiles/page/login.jsp</welcome-file>
+    </welcome-file-list> -->
+   
+    <!-- end of Welcome page definition -->
+</web-app>
