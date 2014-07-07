@@ -72,7 +72,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="department" class="col-sm-2 control-label">姓名</label>
+									<label for="department" class="col-sm-2 control-label">部门</label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control" name="department"
 											id="department" placeholder="部门">
@@ -137,8 +137,25 @@ if(staffNum>0){
 		                       //翻页调用   
 	function PageCallback(index, jq) {             
 		InitTable(index);  
-	}  
-		                       //请求数据   
+	}
+	function deleteUser(username){
+		var r=confirm("确定要删除该用户吗？")
+		if (r==true){
+		    $.ajax({
+		        url : "admin/deleteuser?username="+username,
+		        type : "GET",
+		        success : function(data) {
+		        	alert("删除成功");
+		        	location.href="adminUser";
+		        },
+		        error : function(data) {        
+		            alert("网络错误");
+		        }
+		    }); 
+		}
+	}
+	
+                    //请求数据   
 	function InitTable(index) {                                  
 		$.ajax({   
 		    url: '<%=request.getContextPath()%>/adminUser/list',      //提交到一般处理程序请求数据   
@@ -161,7 +178,8 @@ if(staffNum>0){
 			            '<td id="realname'+j+'">'+data.staffSubList[j].telephone+'</td>'+
 			            '<td id="realname'+j+'">'+auth+'</td>'+
 			            '<td id="department'+j+'">'+data.staffSubList[j].department+'</td>'+
-			            '<td id="operation'+j+'"><a class="btn btn-primary" href="<%=request.getContextPath()%>/admin/changeInfo?username='+data.staffSubList[j].username+'">修改信息</a></td>'+
+			            '<td id="operation'+j+'"><div class="btn-group"><a class="btn btn-primary" href="<%=request.getContextPath()%>/admin/changeInfo?username='+data.staffSubList[j].username+'">修改信息</a>'+
+			            		'<a class="btn btn-primary" onclick="deleteUser('+data.staffSubList[j].username+')">删除用户</a></div></td>'+
 		            	'</tr>');
 		          };
 		    },

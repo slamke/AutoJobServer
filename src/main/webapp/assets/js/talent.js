@@ -161,6 +161,7 @@ function savechange(rootPath){
 				  realname:"请填写真名",
 				  telephone:"请填写电话号码",
 				  oldcode:"请输入旧密码",
+				  department: "请输入部门信息",
 				  newcode:"请输入新密码",
 				  newcode2:{
 					  required:"请再次输入新密码",
@@ -173,6 +174,29 @@ function savechange(rootPath){
 }
 
 function adminSavechange(rootPath,username){
+	$(document).ready(function() {
+		 $("#chgform").validate({
+			 errorClass: "myerror",
+				 submitHandler: function() {
+					 adminSavechangeDo(rootPath,username);
+				  },	
+			   rules: {
+				 username: "required",
+				 realname: "required",
+				 telephone: "required",
+				 department: "required",
+			  },
+			  messages: {
+				  username:"请填写用户名",
+				  realname:"请填写真名",
+				  telephone:"请填写电话号码",
+				  department: "请输入部门信息",
+			  }
+		    });
+		});
+}
+
+function adminSavechangeDo(rootPath,username){
 	$.ajax({
         url : rootPath+"admin/changeInfo/submit",
         type : "POST",
@@ -181,6 +205,7 @@ function adminSavechange(rootPath,username){
         	 username: $("#username").val(),
 			 realname: $("#realname").val(),
 			 tel: $("#telephone").val(),
+			 department:$("#department").val()
         },
         success : function(data) {
             if(data.success==true){
@@ -195,6 +220,7 @@ function adminSavechange(rootPath,username){
         }
     }); 
 }
+
 function savechange2(rootPath){
 	var oldusername=$.cookie("username");
 	

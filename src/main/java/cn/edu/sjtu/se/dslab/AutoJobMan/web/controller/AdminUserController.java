@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -142,6 +143,7 @@ public class AdminUserController {
 		return modelMap;
 	}
 	
+	
 	@RequestMapping(value="/admin/changeInfo/submit")
 	@ResponseBody
 	public  Map<String, Object> adminChange(@RequestParam(value="oldun")String oldUserName,Staff staff){
@@ -151,6 +153,7 @@ public class AdminUserController {
 			staffreal.setRealname(staff.getRealname());
 			staffreal.setTel(staff.getTel());
 			staffreal.setUsername(staff.getUsername());
+			staffreal.setDepartment(staff.getDepartment());
 			staffService.changeInfo(staffreal);
 			modelMap.put("success", true);
 		}
@@ -158,6 +161,12 @@ public class AdminUserController {
 			modelMap.put("error", "请填写正确的密码");
 		}
 		return modelMap;
+	}
+	
+	@RequestMapping(value="/admin/deleteuser",method= RequestMethod.GET )
+	public  ModelAndView deleteUser(@RequestParam(value="username")String username){
+		System.out.println("username:"+username);
+		return null;
 	}
 	
 	@RequestMapping(value="/changePassword")
