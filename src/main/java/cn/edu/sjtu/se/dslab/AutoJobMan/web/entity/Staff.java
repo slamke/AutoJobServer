@@ -60,8 +60,19 @@ public class Staff implements Serializable {
 	 */
 	@Column(name = "department", nullable = true)
 	private String department;
-
 	
+	@Column(name = "deleted", nullable = true)
+	private boolean deleted;
+	
+	
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+
 	public String getDepartment() {
 		return department;
 	}
