@@ -163,11 +163,11 @@ public class AdminUserController {
 		return modelMap;
 	}
 	
-	@RequestMapping(value="/admin/deleteuser",method= RequestMethod.GET )
+	/*@RequestMapping(value="/admin/deleteuser",method= RequestMethod.GET )
 	public  ModelAndView deleteUser(@RequestParam(value="username")String username){
 		System.out.println("username:"+username);
 		return null;
-	}
+	}*/
 	
 	@RequestMapping(value="/changePassword")
 	@ResponseBody
@@ -218,11 +218,13 @@ public class AdminUserController {
 		}
         return mav;
 	}
-	@RequestMapping(value="/removeUser")
-	public ModelAndView removeUser(@RequestParam(value="username") String username){
+	@RequestMapping(value="/admin/deleteuser",method= RequestMethod.GET )
+	public ModelAndView removeUser(@RequestParam(value="username")String username){
+		System.out.print("dinnnnn!\n");
 		ModelAndView mav = new ModelAndView();
         mav.setViewName("adminUser");
         staffService.removeUserByUserName(username);
+        System.out.print("deleteok!\n");
         return mav;
 	}
 	

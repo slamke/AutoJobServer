@@ -179,7 +179,7 @@ if(staffNum>0){
 			            '<td id="realname'+j+'">'+auth+'</td>'+
 			            '<td id="department'+j+'">'+data.staffSubList[j].department+'</td>'+
 			            '<td id="operation'+j+'"><div class="btn-group"><a class="btn btn-primary" href="<%=request.getContextPath()%>/admin/changeInfo?username='+data.staffSubList[j].username+'">修改信息</a>'+
-			            		'<a class="btn btn-primary" onclick="deleteUser('+data.staffSubList[j].username+')">删除用户</a></div></td>'+
+			            		'<a class="btn btn-primary" onclick="deleteUser(\''+data.staffSubList[j].username+'\')">删除用户</a></div></td>'+
 		            	'</tr>');
 		          };
 		    },

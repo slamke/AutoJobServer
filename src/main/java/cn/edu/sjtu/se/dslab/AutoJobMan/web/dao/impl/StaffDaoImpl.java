@@ -68,8 +68,8 @@ public class StaffDaoImpl implements IStaffDao{
 		List<Staff> staffList=baseDao.queryByProperty(Staff.class, property, username);
 		if(staffList!=null){
 			staffList.get(0).setDeleted(true);
+			baseDao.update(staffList.get(0));
 		}
-		baseDao.update(staffList.get(0));
 	}
 	
 	@Override 
