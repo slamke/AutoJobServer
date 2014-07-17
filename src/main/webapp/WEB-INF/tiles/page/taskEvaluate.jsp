@@ -88,9 +88,14 @@
 								 value="${taskInfo.num}" checked>
 			<br />
 			<button type="submit" class="btn btn-primary">保存</button>
-			<button class="btn btn-primary" onclick="history.back()">返回</button>
+			
 		</form>
-
+		<div class="row">
+			<div class="col-md-8"></div>
+			<div class="col-md-2">
+				<button  class="btn btn-warning" onclick="history.back()">返回</button>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-1"></div>
 </div>
